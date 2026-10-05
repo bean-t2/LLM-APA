@@ -1,8 +1,8 @@
 """Validate the JSON shape before sharing or submitting predictions."""
 
-from pathlib import Path
 import argparse
 import sys
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))

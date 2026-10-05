@@ -15,9 +15,9 @@ Evaluate diagnosis correctness and level compliance separately. Record violation
 ## Files
 
 - `dataset.py`: task-specific input/target view.
-- `pipeline.py`: generation, checking, and regeneration boundary.
+- `pipeline.py`: deterministic baseline; shared model execution adds generated feedback and compliance diagnostics.
 - `compliance.py`: centralized checker interface.
 - `prompts/level_policy.md`: one policy for all experiments.
 - `prompts/`: immutable prompt versions.
 
-Start with `examples/normalized_sample.json` and `examples/predictions/task3.json` before implementing these files.
+The current model baseline uses one-pass level-conditioned generation, with teacher feedback only as a training/RAG target. RAG filters by requested level. Regeneration is optional after failure analysis; overlap/compliance checks do not establish semantic correctness. Follow [RUN_EXPERIMENTS.md](../../docs/project/RUN_EXPERIMENTS.md).
